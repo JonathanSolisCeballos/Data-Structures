@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+* {
+  font-family: "Roboto", sans-serif
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background: #f9f9f9;
+  margin:0;
+  padding:0;
+}
+
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
+}
+
+#chart, .chart-box {
+  padding-top: 20px;
+  padding-left: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 22px 35px -16px rgba(0,0,0, 0.1);
+}
+
+select.flat-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #008FFB url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'60px\' height=\'60px\'><polyline fill=\'white\' points=\'46.139,15.518 25.166,36.49 4.193,15.519\'/></svg>") no-repeat scroll right 2px top 9px / 16px 16px;
+  border: 0 none;
+  border-radius: 3px;
+  color: #fff;
+  font-family: arial,tahoma;
+  font-size: 16px;
+  font-weight: bold;
+  outline: 0 none;
+  height: 33px;
+  padding: 5px 20px 5px 10px;
+  text-align: center;
+  text-indent: 0.01px;
+  text-overflow: "";
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease 0s;
+  width: auto;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  -ms-transition: 0.3s ease all;
+  -o-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+select.flat-select:focus, select.flat-select:hover {
+  border: 0;
+  outline: 0;
+}
+
+.apexcharts-canvas {
+  margin: 0 auto;
+}
+
+.errorsContainer{
+  background-color: #dc3545;
+  color:white;
+  padding:0.2em 1em;
+  margin:1rem;
+  opacity: 0.9;
+  border-radius: 5px;
+  display: none;
+}
+
+/* styles for the form container and elements */
+.formContainer {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.formContainer form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputData input{
+  margin-left:0.3em;
+  border-radius: 5px;
+  border-style: none;
+  border: 0.5px solid rgba(75, 75, 75, 0.795);
+}
+
+.labelTxtUpTo{
+  margin-left:1em;
+}
+
+.btnCreateGraph{
+  width: 60%;
+  padding:0.5em;
+  color: white;
+  background: #28a745;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  margin:1rem;
+}
+
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #3D444A;
+  width: 100%;
+  height: 75px;
+  color: rgba(255, 255, 255, 0.55);
+  position: absolute;
+  bottom: 0;
+  left:0;
+}
+
+footer p {
+  display: inline-block;
+}
+
+footer .socialMediaImg {
+  max-width: 30px;
+}
+
+footer a {
+  text-decoration: none;
+  margin-left: 15px;
+}
