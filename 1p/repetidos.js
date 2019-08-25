@@ -1,7 +1,12 @@
-var arr = [git 1,2,3,4,5,6,7,8,8];
+let i = "ABCDA";
 
-function repetidos(arr){
-    for(let i=0;i<arr.length;i++){
-        
-    }
-}
+const firstRecurringCharacter = (arr) => {
+  let mapSet = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (mapSet[arr[i]]) return arr[i];
+    else mapSet[arr[i]] = arr[i];
+  }
+  return null;
+};
+
+console.log(firstRecurringCharacter(i.split("")));
