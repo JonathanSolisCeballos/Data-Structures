@@ -7,9 +7,9 @@ const sigmaSumOneByOnePowN = (upTo,pow) => {
 }
 
 
-const sigmaFormulaSumOneByOnePowN = (n, k) =>{
-    return (1 / (k + 1)) * (Math.pow(n,k + 1));
+const sigmaFormulaSumOneByOnePowN = (upTo, pow) =>{
+    return (1 / (pow + 1)) * (Math.pow(upTo,pow + 1));
 }
 
-console.log(sigmaSumOneByOnePowN(10,2));
-console.log(sigmaFormulaSumOneByOnePowN(10,2));
+console.log(sigmaSumOneByOnePowN(10,3));
+console.log(sigmaFormulaSumOneByOnePowN(10,3));
