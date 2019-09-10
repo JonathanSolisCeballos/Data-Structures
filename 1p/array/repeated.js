@@ -1,4 +1,4 @@
-let i = "ABCDA";
+let i = "ABCDE";
 
 const firstRecurringCharacter = (arr) => {
   let mapSet = {};
