@@ -11,3 +11,5 @@ function factorial(x) {
 }
 
 console.log(factorial(5))
+
+g
