@@ -10,7 +10,7 @@ const eulerOfX = (x,upTo) => { //X will be the given number
 }
 
 //console.log(eulerOfX(2,10));
-console.log(factorial(5));
-console.log(pow(2,5));
+//console.log(factorial(5));
+//console.log(pow(2,5));
 
-console.log(eulerOfX(10,10));
+console.log(eulerOfX(1,10));

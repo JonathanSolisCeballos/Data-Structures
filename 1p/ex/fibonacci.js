@@ -16,4 +16,4 @@ const fibonacci = (n) => {
     }
 }
 
-console.log(fibonacci(29));
+console.log(fibonacci(10));

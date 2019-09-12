@@ -1,4 +1,5 @@
 let i = "ABCDE";
+let e = [1,2,3,4,5,2]
 
 const firstRecurringCharacter = (arr) => {
   let mapSet = {};
@@ -9,4 +10,5 @@ const firstRecurringCharacter = (arr) => {
   return false;
 };
 
-console.log(firstRecurringCharacter(i.split("")));
+//console.log(firstRecurringCharacter(i.split("")));
+console.log(firstRecurringCharacter(e));
