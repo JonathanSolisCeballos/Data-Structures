@@ -21,4 +21,4 @@ class Matrix{
 
 let matrix1 = new Matrix(3,3);
 matrix1.initRandom();
-console.log(matrix1.matrix);
+console.table(matrix1.matrix);
