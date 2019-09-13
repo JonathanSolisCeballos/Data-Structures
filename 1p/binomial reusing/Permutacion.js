@@ -14,4 +14,4 @@ function factorial(x) {
     }
 }
 
-console.log(Permutacion(16,3))
+console.log(Permutacion(8,5))
