@@ -23,7 +23,7 @@
             data: [30]
         }],
         title: {
-            text: 'X^2 Graph<',
+            text: 'X^2 Graph',
             align: 'center'
         },
         grid: {
