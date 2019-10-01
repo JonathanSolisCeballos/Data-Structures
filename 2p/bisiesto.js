@@ -12,4 +12,4 @@ const bisiesto = (year) => {
 
 
 
-console.log(bisiesto(1996))
+console.log(bisiesto(1896))
