@@ -56,7 +56,6 @@ console.log('REMOVE', dict.remove('John'))
 console.log('KEYS', dict.keys())
 console.log('VALUES', dict.values())
 
-console.log('GET ITEMS', dict.get
-Items())
+console.log('GET ITEMS', dict.getItems())
 
 //Pues hay que definir los campos
