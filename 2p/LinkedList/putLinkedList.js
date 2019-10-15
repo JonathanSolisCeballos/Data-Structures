@@ -1,7 +1,3 @@
-let node1 = {
-  data: "i'm node 1",
-  next: null
-}
 
 function printLinkedList(firstNode) {
   let current = firstNode;
@@ -14,13 +10,6 @@ function printLinkedList(firstNode) {
 printLinkedList(node1); */
 
 
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
-  }
-}
-
 function createNodes() {
   let n1 = new Node("nodo 1");
   let n2 = new Node("nodo 2");
@@ -29,33 +18,69 @@ function createNodes() {
 }
 /* createNodes() */
 
+
+
+
+////////////////////
+
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
 class LinkedList {
   constructor() {
-    this.lastNode = null;
+    this.tail = {data:"Tail", next:null};
+    this.head = {data:"Head", next: this.tail};
+    this.length = 0;
   }
-
-  putNewNode(data) {
-    if (this.lastNode != null) {
-      let newNode = new Node(data);
-      this.lastNode.next = newNode;
-      console.log(this.lastNode)
-      this.lastNode = newNode;
+  
+  insertHead(data) {
+    let newNode = new Node(data);
+    
+    if (this.head.next === this.tail) {
+        this.head.next = newNode;
+        newNode.next = this.tail;
     } else {
-      console.log("Last node was undefined")
-      this.lastNode = new Node(data);
-      return this.lastNode;
+        let temp = this.head.next;
+        this.head.next = newNode;
+        newNode.next = temp;
     }
   }
-
+  
+  insertTail(data) {
+    let newNode = new Node(data);
+    
+    if (this.head.next === this.tail) {
+        this.head.next = newNode;
+        newNode.next = this.tail;
+    } else {
+      this.tail.data = newNode.data;
+      let newTail = new Node("Tail");
+      newNode.next = newTail;
+      this.tail.next = newNode.next;
+      
+    }
+  }
+  
   generateNode() {
-    /*   this.putNewNode("node 1");
-      this.putNewNode("node 2");
-      this.putNewNode("node 3"); */
-    console.log(this.putNewNode("node 1"));
-    console.log(this.putNewNode("node 2"));
-    console.log(this.putNewNode("node 3"));
+    // this.insertHead("soy nuevo")
+    // this.insertHead("soy mas nuevo")
+    this.insertTail("last node");
+    this.insertTail("very last node");
+    
+    
+    return this.head
   }
 }
 
 let newList = new LinkedList();
-newList.generateNode();
+console.log(newList.generateNode())
+
+
+
+
+
+

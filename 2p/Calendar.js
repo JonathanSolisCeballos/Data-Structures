@@ -20,7 +20,9 @@
       } else return false;
     }
 
-    printCalendar(month, year) {}
+    printCalendar(month, year) {
+      
+    }
 
     todayPlus(day, nDays) {
       return (day + nDays) % 7;
