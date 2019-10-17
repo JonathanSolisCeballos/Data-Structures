@@ -5,15 +5,24 @@
     }
 
     sum(arrayToSum) {
-      return this.arr.map((el, index) => el + arrayToSum[index]);
+      return arrayToSum.length != this.arr.length
+        ? Error("Vector size is different than the original one")
+        : this.arr.map((el, index) => el + arrayToSum[index]);
     }
 
     subt(arrayToSum) {
-      return this.arr.map((el, index) => el - arrayToSum[index]);
+      return arrayToSum.length != this.arr.length
+        ? Error("Vector size is different than the original one")
+        : this.arr.map((el, index) => el - arrayToSum[index]);
     }
 
     mul(arrayToSum) {
-      return this.arr.map((el, index) => el * arrayToSum[index]);
+      return arrayToSum.length != this.arr.length
+        ? Error("Vector size is different than the original one")
+        : this.arr.map((el, index) => el * arrayToSum[index]);
+    }
+    getVector() {
+      return this.arr;
     }
   }
   let vector = new Vector([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
