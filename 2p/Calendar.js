@@ -22,7 +22,6 @@
     }
 
     printCalendar(month, year) {
-<<<<<<< HEAD
       let firstDayofMonth = new Date(year, month).getDay();
       let matrixMonth = new Matrix(6, 7);
       for (let i = 1; i < this.daysInMonth(); i++) {}
@@ -31,9 +30,6 @@
 
     daysInMonth(month, year) {
       return 32 - new Date(year, month, 32).getDate();
-=======
-      
->>>>>>> 709fa13f4bea43f3975a20c4b21bbfe2abe7b8a3
     }
 
     todayPlus(day, nDays) {
