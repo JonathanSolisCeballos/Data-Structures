@@ -1,4 +1,4 @@
-(function() {
+(function () {
   class Fibonacci {
     constructor(n) {
       this.n = n;
@@ -7,6 +7,7 @@
     getValue(n = this.n) {
       //Get the n number of Fibonacci
       let cost = 0;
+
       function fibN(n) {
         cost++;
         return n < 2 ? n : fibN(n - 1) + fibN(n - 2);
@@ -18,6 +19,7 @@
     getCost(n = this.n) {
       //How many times the function has to be called (Recursion) to resolve the n position.
       let cost = 0;
+
       function val(num) {
         cost++;
         return num < 2 ? num : val(num - 1) + val(num - 2);
@@ -53,8 +55,8 @@
     }
   }
 
-  let fib = new Fibonacci(6);
-  console.log(fib.getValue()[0]);
-  console.table(fib.getTable());
+  let fib = new Fibonacci(7);
+  /*  console.log(fib.getValue()[0]); */
   console.log(fib.getSucesion());
+  console.table(fib.getTable());
 })();
