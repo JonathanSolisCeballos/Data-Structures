@@ -1,7 +1,6 @@
 //BINARY SORTED UNBALANCED TREE
-
 //Binary Tree
-(function () {
+(function() {
   class Node {
     constructor(data) {
       this.data = data;
@@ -10,15 +9,16 @@
     }
   }
 
-  class BST { //unsorted balanced binary tree
+  class BSUT {
+    //Binary Unsorted Balanced Tree
     constructor() {
-      this.root = null
+      this.root = null;
     }
     add(data) {
       const node = this.root;
       if (this.root === null) this.root = new Node(data);
       else {
-        const searchTree = function (node) {
+        const searchTree = function(node) {
           if (data < node.data) {
             if (node.left === null) {
               node.left = new Node(data);
@@ -41,29 +41,35 @@
       }
     }
 
-    preOrder(node = this.root) {
-      console.log(node.data);
+    preOrder(nodeR = this.root) {
+      let arr = [];
+      function pre(node) {
+        arr.push(node.data);
 
-      if (node.left) this.preOrder(node.left)
+        if (node.left) pre(node.left);
 
-      if (node.right) this.preOrder(node.right)
+        if (node.right) pre(node.right);
+      }
+      pre(nodeR);
+      return arr;
     }
 
     inOrder(node = this.root) {
-      if (node.left) this.inOrder(node.left)
+      if (node.left) this.inOrder(node.left);
       console.log(node.data);
-      if (node.right) this.inOrder(node.right)
+      if (node.right) this.inOrder(node.right);
     }
+
+    breadthFirst() {}
   }
 
-  let tree = new BST();
+  let tree = new BSUT();
   tree.add(1);
   tree.add(5);
   tree.add(10);
   tree.add(2);
   tree.inOrder();
 
-  console.log(tree.root)
-
-
+  console.log(tree.root);
+  console.log(tree.preOrder());
 })();
