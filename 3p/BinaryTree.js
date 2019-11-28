@@ -1,34 +1,56 @@
-//Binary Tree
-(function() {
-  class Node {
-    constructor(data) {
-      this.data = data;
-      this.left = null;
-      this.right = null;
+module.exports = class BinaryTree {
+  constructor() {
+    this.root = null;
+  }
+  preOrder(node = this.root) {
+    let arr = [];
+    function pre(node) {
+      arr.push(node.data);
+
+      if (node.left) pre(node.left);
+
+      if (node.right) pre(node.right);
     }
+    pre(node);
+    return arr;
   }
 
-  let node1 = new Node("root");
-  let node2 = new Node("left");
-  let node3 = new Node("rootSubtree");
-  let node4 = new Node("left");
-  let node5 = new Node("right");
+  inOrder(node = this.root) {
+    let arr = [];
+    function inOrd(node) {
+      if (node.left) inOrd(node.left);
 
-  node1.left = node2;
-  node1.right = node3;
-  node3.left = node4;
-  node3.right = node5;
-  
+      arr.push(node.data);
 
-  const printTree = (node)=>{//Preorder NLR
-
-    console.log(node.data);
-
-    if(node.left) printTree(node.left)
-    
-    if(node.right) printTree(node.right)
+      if (node.right) inOrd(node.right);
+    }
+    inOrd(node);
+    return arr;
   }
 
-  printTree(node1);
+  postOrder(node = this.root) {
+    let arr = [];
+    function postOrd(node) {
+      if (node.left) postOrd(node.left);
 
-})();
+      if (node.right) postOrd(node.right);
+      arr.push(node.data);
+    }
+    postOrd(node);
+    return arr;
+  }
+
+  breadthFirst() {
+    let node = this.root;
+    let queue = [node];
+    let result = [];
+
+    while (queue.length) {
+      node = queue.shift();
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+      result.push(node.data);
+    }
+    return result;
+  }
+};

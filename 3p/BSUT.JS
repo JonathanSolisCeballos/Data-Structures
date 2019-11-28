@@ -1,6 +1,7 @@
 //BINARY SORTED UNBALANCED TREE
 //Binary Tree
 (function() {
+  const BinaryTree = require('./BinaryTree.js');
   class Node {
     constructor(data) {
       this.data = data;
@@ -9,12 +10,12 @@
     }
   }
 
-  class BSUT {
+  class BSUT extends BinaryTree{
     //Binary Unsorted Balanced Tree
     constructor() {
-      this.root = null;
+      super();
     }
-    add(data) {
+    insert(data) {
       const node = this.root;
       if (this.root === null) this.root = new Node(data);
       else {
@@ -41,35 +42,67 @@
       }
     }
 
-    preOrder(nodeR = this.root) {
-      let arr = [];
-      function pre(node) {
-        arr.push(node.data);
-
-        if (node.left) pre(node.left);
-
-        if (node.right) pre(node.right);
+    remove(data) {
+      const removeNode = function(node, data) {
+        if (node == null) {
+          return null;
+        }
+        if (data == node.data) {
+          // node has no children 
+          if (node.left == null && node.right == null) {
+            return null;
+          }
+          // node has no left child 
+          if (node.left == null) {
+            return node.right;
+          }
+          // node has no right child 
+          if (node.right == null) {
+            return node.left;
+          }
+          // node has two children 
+          var tempNode = node.right;
+          while (tempNode.left !== null) {
+            tempNode = tempNode.left;
+          }
+          node.data = tempNode.data;
+          node.right = removeNode(node.right, tempNode.data);
+          return node;
+        } else if (data < node.data) {
+          node.left = removeNode(node.left, data);
+          return node;
+        } else {
+          node.right = removeNode(node.right, data);
+          return node;
+        }
       }
-      pre(nodeR);
-      return arr;
+      this.root = removeNode(this.root, data);
     }
-
-    inOrder(node = this.root) {
-      if (node.left) this.inOrder(node.left);
-      console.log(node.data);
-      if (node.right) this.inOrder(node.right);
-    }
-
-    breadthFirst() {}
   }
 
   let tree = new BSUT();
-  tree.add(1);
-  tree.add(5);
-  tree.add(10);
-  tree.add(2);
-  tree.inOrder();
-
+  tree.insert(25);
+  tree.insert(15);
+  tree.insert(50);
+  tree.insert(10);
+  tree.insert(22);
+  tree.insert(35);
+  tree.insert(70);
+  tree.insert(4);
+  tree.insert(12);
+  tree.insert(18);
+  tree.insert(24);
+  tree.insert(31);
+  tree.insert(44);
+  tree.insert(66);
+  tree.insert(90);
+  
   console.log(tree.root);
-  console.log(tree.preOrder());
+  console.log(`Tree Transversal InOrder: ${tree.inOrder()}`);
+  console.log(`Tree Transversal preOrder: ${tree.preOrder()}`);
+  console.log(`Tree Transversal postOrder: ${tree.postOrder()}`);
+  console.log(`Tree Transversal breadthFirst: ${tree.breadthFirst()}`);
+  
+  tree.remove(50);
+  console.log(tree.root);
 })();
