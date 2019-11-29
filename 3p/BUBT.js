@@ -61,10 +61,11 @@ class BSUT extends BinaryTree {
   }
 
   remove(data) {
+    let nodeFind = tree.find(data);
     console.log(`Find (${data}): ${JSON.stringify(tree.find(data))}`);
     if (nodeFind) {
       if (!nodeFind.left && !nodeFind.right) {
-        nodeFind = null;
+        nodeFind.data = null;
         return true;
       } else {
         console.log('has left or right, looking for rightmost node');

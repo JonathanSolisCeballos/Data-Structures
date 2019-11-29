@@ -2,6 +2,7 @@
   const Matrix = require("./Matrix");
 
   let matrix1 = new Matrix(6, 6);
+  console.log(matrix1)
   console.log(matrix1.isSquared())
 
   let notSquaredMatrix = new Matrix(8, 3);
